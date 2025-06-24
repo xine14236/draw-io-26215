@@ -407,15 +407,6 @@ else
 	App.main();
 }
 </script>
-<script>
-  const originalSend = mxXmlRequest.prototype.send;
-  mxXmlRequest.prototype.send = function(a, b, c, d) {
-    if (this.url.includes('/notifications')) {
-      console.warn('[攔截] draw.io 嘗試訪問 /notifications，被阻擋。');
-      return;
-    }
-    originalSend.call(this, a, b, c, d);
-  };
-</script>
+
 </body>
 </html>
